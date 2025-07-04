@@ -51,8 +51,10 @@ function switchPlayer() {
   currentScore = 0;
 }
 
+
+
 rollBtn.addEventListener("click", function () {
-  if (playing) {
+  setInterval(()=>{ if (playing) {
     const dice = Math.floor(Math.random() * 6) + 1;
     diceImg.src = `img/${dice}.jpg`;
 
@@ -67,7 +69,10 @@ rollBtn.addEventListener("click", function () {
       }
     }
   }
+},2000)
 });
+
+
 
 holdBtn.addEventListener("click", function () {
   if (playing) {
