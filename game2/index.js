@@ -10,7 +10,6 @@ const rollBtn = document.querySelector(".btn-roll");
 const holdBtn = document.querySelector(".btn-hold");
 const newGameBtn = document.querySelector(".btn-new");
 const diceImg = document.querySelector(".dice-img");
-
 let scorePlayer0;
 let scorePlayer1;
 let currentScore;
@@ -23,18 +22,15 @@ function init() {
   currentScore = 0;
   activePlayer = 0;
   playing = true;
-
   score0.textContent = "0";
   score1.textContent = "0";
   current0.textContent = "0";
   current1.textContent = "0";
   diceImg.src = "img/1.jpg";
-
   player0.classList.add("active");
   player1.classList.remove("active");
 }
 init();
-
 function switchPlayer() {
   if (activePlayer === 0) {
     current0.textContent = "0";
@@ -50,13 +46,11 @@ function switchPlayer() {
   currentScore = 0;
 }
 
-
 // roll function 
 rollBtn.addEventListener("click", function () {
   if (playing) {
     const dice = Math.floor(Math.random() * 6) + 1;
     diceImg.src = `img/${dice}.jpg`;
-
     if (dice === 1) {
       switchPlayer();
     } else {
@@ -69,9 +63,6 @@ rollBtn.addEventListener("click", function () {
     }
   }
 });
-
-
-
 
 holdBtn.addEventListener("click", function () {
   if (playing) {
